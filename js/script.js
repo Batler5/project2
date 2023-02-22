@@ -1,6 +1,25 @@
-"use strict";
+"use sctrict"
 
+const numberFilms = +prompt('Сколько фильмов вы уже посмотрели ?', '');
 
+let personalMovieDB = 
+{
+    count : numberFilms,
+    movies:{},
+    actors:{},
+    genres:[],
+    privat:false
+};
+
+const mov1 = prompt('Один из последних просмотренных фильмов ?', ''),
+    ocen1 = prompt('На сколько оценете его ?', ''),
+    mov2 = prompt('Один из последних просмотренных фильмов ?', ''),
+    ocen2 = prompt('На сколько оценете его ?', '');
+
+personalMovieDB.movies[mov1] = ocen1;
+personalMovieDB.movies[mov2] = ocen2;
+
+console.log(personalMovieDB);
 
 // console.log("arr"+" - object");
 // console.log(4 + +"5");
