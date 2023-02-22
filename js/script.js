@@ -1,4 +1,4 @@
-"use sctrict"
+"use strict"
 
 const numberFilms = +prompt('Сколько фильмов вы уже посмотрели ?', '');
 
