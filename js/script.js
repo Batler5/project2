@@ -1,7 +1,9 @@
 "use strict"
 
-const numberFilms = +prompt('Сколько фильмов вы уже посмотрели ?', '');
 
+let numberFilms;
+
+start();
 let personalMovieDB = 
 {
     count : numberFilms,
@@ -11,8 +13,19 @@ let personalMovieDB =
     privat:false
 };
 
+rememberMyFilms();
+detectPersonalLevel();
+writeYourGeners();
+showMyDB();
 
-for (let i =0; i<2; i++){
+function start(){
+    numberFilms = prompt('Сколько фильмов вы уже посмотрели ?', '');
+    while(numberFilms=='' || numberFilms == null || isNaN(numberFilms)){
+        numberFilms = prompt('Сколько фильмов вы уже посмотрели ?', '');
+    }
+}
+function rememberMyFilms(){
+    for (let i =0; i<2; i++){
     let a = prompt('Один из последних просмотренных фильмов ?', ''),
      b = prompt('На сколько оценете его ?', '');
     if (a!=null && a.length < 50 && a != '' && b>=0 && b<=10){
@@ -24,6 +37,23 @@ for (let i =0; i<2; i++){
         alert('Введены не корректные данные, повторите ещё раз.');
     }
 };
+}
+function detectPersonalLevel(){
+    if(personalMovieDB.count<=10){
+    alert('Просмотрено довольно мало фильмов.');
+} else if (personalMovieDB.count >10 && personalMovieDB.count <=30){
+    alert('Вы классический зритель.');
+} else if(personalMovieDB.count>30){alert('Вы киноман!');}
+else {console.log('Произошла ошибка.');}
+}
+function showMyDB(){
+    if(!personalMovieDB.privat){console.log(personalMovieDB);}
+}
+function writeYourGeners(){
+    for(let i =1; i<4; i++){
+personalMovieDB.genres[i-1]=prompt('Ваш любимый жанр под номером '+i,'');
+    }
+}
 // let i=0
 // while (i<2){
 //     let a = prompt('Один из последних просмотренных фильмов ?', ''),
@@ -38,15 +68,6 @@ for (let i =0; i<2; i++){
 //    }
 //    i++;
 // }
-if(personalMovieDB.count<=10){
-    alert('Просмотрено довольно мало фильмов.');
-} else if (personalMovieDB.count >10 && personalMovieDB.count <=30){
-    alert('Вы классический зритель.');
-} else if(personalMovieDB.count>30){alert('Вы киноман!');}
-else {console.log('Произошла ошибка.');}
-
-console.log(personalMovieDB);
-
 // console.log("arr"+" - object");
 // console.log(4 + +"5");
 
