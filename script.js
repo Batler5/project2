@@ -1,42 +1,123 @@
 "use strict"
 
+let a = 5,
+b=a;
+b=b+5;
+console.log(b,a);
+
+
+let obj ={
+    a:5,
+    b:1
+};
+const copy = obj;
+copy.a=10;
+console.log(copy, obj);
+
+
+// function copy(mainObj){
+// let objCopy={};
+// let key;
+// for(key in mainObj){
+//     objCopy[key]=mainObj[key];
+// }
+// return objCopy;
+// }
+// let numbers ={
+//     a:2,
+//     b:5,
+//     c:{
+//         x:7,
+//         y:4
+//     }
+// };
+// let newNumbers=copy(numbers);
+// newNumbers.a=10;
+// newNumbers.c.x=10;
+// console.log(numbers);
+// console.log(copy(numbers));
+// console.log(newNumbers);
+
+
+const add ={
+    d:17,
+    e:20
+};
+let clone = (Object.assign({}, add));
+clone.d = 20;
+console.log(add, clone);
+
+
+let oldArray = ['a', 'b', 'c'];
+let newArray = oldArray.slice();
+newArray[1]='sad';
+console.log(newArray, oldArray);
+
+
+const video =['youtube','vimeo','rutube'],
+    blogs=['wod','live','blog'],
+    internet=[...video,...blogs, 'vk', 'facebook'];
+    console.log(internet);
+
+
+
+    
+    
+const num = [2,5,7];
+function log(a,b,c){ console.log(a);    console.log(b);   console.log(c); }
+log(...num)
+
+
+
+const array = ['a','b'];
+const newArr=[...array];
+newArr[0]='c';
+console.log(array, newArr);
+
+
+const q={
+one:1,
+two:2
+};
+const newObj={...q};
+newObj.one=3;
+console.log(q, newObj);
+
 
 
 let arr = [11,2,34,4,-5,6];
 let str = 'mfdlk dmfslkmf fdmslfm fdlskm';
 arr.sort(compareNum);
-console.log(arr);
-
 function compareNum(a, b){
     return a-b;
 }
-// arr.forEach(function(item, i, arr){
-// console.log(`${i}: ${item} Внутри массива ${arr}`);
-// });
+console.log(arr);
+arr.forEach(function(item, i, arr){
+console.log(`${i}: ${item} Внутри массива ${arr}`);
+});
 
-// arr.pop();
-// arr.push(10);
+arr.pop();
+arr.push(10);
+arr[99]=3;
+console.log(arr);
+for(let value of arr){
+    console.log(value);
+}
 
-// arr[99]=3;
-// console.log(arr);
-// for(let value of arr){
-//     console.log(value);
-// }
 
-
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    },
-    makeTest: function(){
-        console.log('test');
-    }
-};
-const {border, bg} = options.colors;
+// const options = {
+//     name: 'test',
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'red'
+//     },
+//     makeTest: function(){
+//         console.log('test');
+//     }
+// };
+// const {border, bg} = options.colors;
 // options.makeTest();
 // console.log(Object.keys(options).length);
 // console.log(options.name);
@@ -57,13 +138,13 @@ const {border, bg} = options.colors;
 // }
 // console.log(counter);
 //learnJS('JavaScript', first);
-function first(){
-    console.log('я прошел этот урок');
-}
-function learnJS(lang, callback){
-    console.log(`Я учу: ${lang}`);
-    callback();
-}
+// function first(){
+//     console.log('я прошел этот урок');
+// }
+// function learnJS(lang, callback){
+//     console.log(`Я учу: ${lang}`);
+//     callback();
+// }
 // let str = "test/FEED";
 // let arr = [1,4,9,3,2,43,23];
 // str.toLocaleUpperCase();
