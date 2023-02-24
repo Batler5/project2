@@ -1,18 +1,35 @@
 "use strict"
-console.log(Calc(10, 20));
-function Calc(i, j){
-    
-    let num = i+j;
-    return num;
-}
-const logger = function(){
-console.log('hello');
-};
-logger();
 
-const calc = (a,b)=> {return a+b};
-console.log(calc(4,5));
-// let num = 50;
+// let str = "test/FEED";
+// let arr = [1,4,9,3,2,43,23];
+// str.toLocaleUpperCase();
+// str.toLowerCase();
+
+
+// // fruit.indexOf('q');
+// let logg = 'Hello world!';
+
+// logg.substr(6,3);
+
+// let num = 12.49;
+// console.log(Math.round(num));
+// let fruit = '12px';
+// console.log(parseFloat(fruit));
+
+// console.log(Calc(10, 20));
+// function Calc(i, j){
+    
+//     let num = i+j;
+//     return num;
+// }
+// let logger = function(){
+// console.log('hello');
+// };
+// logger();
+
+// let calc = (a,b)=> {return a+b};
+// console.log(calc(4,5));
+//  num = 50;
 
 // while (num < 55){
 //     console.log(num);
