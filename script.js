@@ -1,5 +1,29 @@
 "use strict"
 
+
+
+let arr = [11,2,34,4,-5,6];
+let str = 'mfdlk dmfslkmf fdmslfm fdlskm';
+arr.sort(compareNum);
+console.log(arr);
+
+function compareNum(a, b){
+    return a-b;
+}
+// arr.forEach(function(item, i, arr){
+// console.log(`${i}: ${item} Внутри массива ${arr}`);
+// });
+
+// arr.pop();
+// arr.push(10);
+
+// arr[99]=3;
+// console.log(arr);
+// for(let value of arr){
+//     console.log(value);
+// }
+
+
 const options = {
     name: 'test',
     width: 1024,
@@ -12,13 +36,9 @@ const options = {
         console.log('test');
     }
 };
-
+const {border, bg} = options.colors;
 // options.makeTest();
 // console.log(Object.keys(options).length);
-
-const {border, bg} = options.colors;
-const {width}=options;
-console.log(width);
 // console.log(options.name);
 // delete options.name;
 // console.log(options);
