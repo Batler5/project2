@@ -24,53 +24,24 @@ const movieDB = {
     ]
 };
 
+const adv = document.querySelector('.promo__adv');
+adv.remove();
+const genre = document.querySelector('.promo__genre');
+genre.textContent='ДРАМА';
+const promo = document.querySelector('.promo__bg');
+promo.style.backgroundImage = 'url(img/bg.jpg)';
 
-const adv = document.querySelectorAll('.promo__adv img');
-adv.forEach(item=>{
-item.remove();
-});
-
-const genre=document.querySelector('.promo__genre');
-genre.textContent='Драма';
-
-const poster = document.querySelector('.promo__bg');
-poster.style.backgroundImage = 'url(img/bg.jpg)';
-
+const promoList = document.querySelector('.promo__interactive-list');
+promoList.innerHTML='';
 movieDB.movies.sort();
-
-const inter = document.querySelector('.promo__interactive-list');
-inter.innerHTML="";
-movieDB.movies.forEach((films, i)=>{
-     inter.innerHTML += `
-         <li class="promo__interactive-item">${i+1} ${films}
-         <div class="delete"></div>
-         </li>
-     `    
+movieDB.movies.forEach((item,i)=>{
+promoList.innerHTML+=`
+<li class="promo__interactive-item">${i+1} ${item}
+<div class="delete"></div>
+</li>`;
 });
 
-// const adverts = document.querySelectorAll('.promo__adv img');
-// adverts.forEach(items=>{
-// items.remove();
+// const adv = document.querySelectorAll('.promo__adv img');
+// adv.forEach(item=>{
+// item.remove();
 // });
-
-
-// const poster = document.querySelector('.promo__bg'),
-//     genre = poster.querySelector('.promo__genre'),
-//     interActive = document.querySelector('.promo__interactive-list');
-
-// genre.textContent='ДРАМА';
-
-
-// poster.style.backgroundImage = 'url(img/bg.jpg)'
-
-// interActive.innerHTML = "";
-// movieDB.movies.sort();
-// movieDB.movies.forEach((film, i)=>{
-// interActive.innerHTML +=`
-// <li class="promo__interactive-item">${i+1} ${film}
-//     <div class="delete"></div>
-//     </li>
-// `
-
-// });
-
